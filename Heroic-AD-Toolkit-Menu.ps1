@@ -45,7 +45,7 @@ do {
                 Clear-Host
                 'Option #3 it is'
                 'Running Group policy update immediately'
-                Start-Process -filepath $GpUdate
+                Start-Process -filepath $GpUpdate
                 Start-Sleep 5
             }
             'd4'{
