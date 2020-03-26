@@ -15,6 +15,8 @@ Write-Host "3: Press 3 for group policy update"
 Write-Host "4: Press 4 for Administrator group policy update"
 Write-Host "Q: Press Q to quit"
 }
+#to make GPUdate
+$GpUpdate = $env:systemroot +"\system32\gpupdate.exe"
 #this is the inifnite loop that makes the menu accept option's until closed it also makes sure that you have pressed the correct button
 #as it does not react to anything other than the preselected option the loop is nessery to make sure the program dosent stop.
 do {
@@ -43,7 +45,8 @@ do {
                 Clear-Host
                 'Option #3 it is'
                 'Running Group policy update immediately'
-                Start-Sleep 2
+                Start-Process -filepath $GpUdate
+                Start-Sleep 5
             }
             'd4'{
                 Clear-Host
