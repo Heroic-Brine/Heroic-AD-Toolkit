@@ -39,7 +39,14 @@ do {
                 Clear-Host
                 'Option #2 it is'
                 'Computer disenrolment opening'
-                Start-Sleep 2
+                Start-Sleep 1
+                write-host "psscriptroot $global:pssscriptroot"
+                write-host "pscommandpath $pscommandpath"
+                write-host "$pscommandpath ..\..\Powershell-Computer-AD-removal\Powershell-Computer-AD-Removal.ps1"
+                start-sleep 5
+                Invoke-Expression " C:\Users\0\Desktop\stefan_scripts\Powershell-Computer-AD-removal\Powershell-Computer-AD-Removal.ps1"
+                Start-Sleep 5
+                read-host
             }
             'd3'{
                 Clear-Host
