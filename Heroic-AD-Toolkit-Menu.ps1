@@ -41,7 +41,6 @@ do {
                 'Option #2 it is'
                 'Computer disenrolment opening'
                 $path2 = Resolve-Path $pscommandpath\..\..\Powershell-Computer-AD-removal\Powershell-Computer-AD-Removal.ps1
-                Write-Host $path2 ELEVATE $ElevatePath
                 & $ElevatePath $path2
                 Start-Sleep 1
             }
