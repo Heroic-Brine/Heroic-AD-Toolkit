@@ -26,6 +26,7 @@ do {
     #This is made to reads input from the user with a single key press a read-host could also be used but that requires the user to press enter.
     $input = [System.Console]::ReadKey("What do you desire") 
     $k = $input.key
+    $ElevatePath = Resolve-Path $pscommandpath\..\..\powershell-Self-Elevating-Paramater\powershell-Self-Elevating-Paramater\Self_Elevate-Paramater.ps1
     #switch to deterim which key has been pressed
     switch ($k) 
             {  
@@ -39,14 +40,10 @@ do {
                 Clear-Host
                 'Option #2 it is'
                 'Computer disenrolment opening'
+                $path2 = Resolve-Path $pscommandpath\..\..\Powershell-Computer-AD-removal\Powershell-Computer-AD-Removal.ps1
+                Write-Host $path2 ELEVATE $ElevatePath
+                & $ElevatePath $path2
                 Start-Sleep 1
-                write-host "psscriptroot $global:pssscriptroot"
-                write-host "pscommandpath $pscommandpath"
-                write-host "$pscommandpath ..\..\Powershell-Computer-AD-removal\Powershell-Computer-AD-Removal.ps1"
-                start-sleep 5
-                Invoke-Expression " C:\Users\0\Desktop\stefan_scripts\Powershell-Computer-AD-removal\Powershell-Computer-AD-Removal.ps1"
-                Start-Sleep 5
-                read-host
             }
             'd3'{
                 Clear-Host
