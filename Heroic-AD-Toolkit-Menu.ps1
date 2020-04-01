@@ -34,13 +34,19 @@ do {
                 Clear-Host
                 'Option #1 it is'
                 'Computer enrollment opening'
-                Start-Sleep 2
+                #same as line 47
+                $Path1 = Resolve-Path $pscommandpath\..\..\powershell-Computer-AD-Add\powershell-Computer-AD-Add.ps1
+                #same as line 49
+                & $ElevatePath $Path1
+                Start-Sleep 1
             }
             'd2'{
                 Clear-Host
                 'Option #2 it is'
                 'Computer disenrolment opening'
+                #makes a var that has the path one folder up from the scripts current location and the relative location of my remove computer script
                 $path2 = Resolve-Path $pscommandpath\..\..\Powershell-Computer-AD-removal\Powershell-Computer-AD-Removal.ps1
+                #Runs my ElevatePath script with the paramater of my computer removal script
                 & $ElevatePath $path2
                 Start-Sleep 1
             }
